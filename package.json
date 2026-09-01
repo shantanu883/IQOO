@@ -1,0 +1,21 @@
+{
+  "name": "devloop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DevLoop — a social network where developers build in public. Share executable code, showcase projects, get AI code analysis, keep build streaks, and find hackathon teammates.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
